@@ -1,61 +1,67 @@
-Bem-vindo ao seu projeto Lovable
-Informações do projeto
+👋 Bem-vindo ao seu projeto Lovable
+📌 Informações do Projeto
 
-URL: https://lovable.dev/projects/bd6cde33-c510-4bb0-acd3-1dbbc8570c8e
+URL do projeto:
+https://lovable.dev/projects/bd6cde33-c510-4bb0-acd3-1dbbc8570c8e
 
-Como posso editar este código?
+✏️ Como posso editar este código?
 
-Existem várias maneiras de editar sua aplicação.
+Existem várias maneiras de editar sua aplicação:
 
-Usando o Lovable
+🔵 1. Usando o Lovable
 
-Simplesmente acesse o Projeto no Lovable
- e comece a enviar comandos.
+Basta acessar o seu projeto:
 
-As alterações feitas pelo Lovable serão automaticamente commitadas neste repositório.
+👉 Abrir Projeto no Lovable
 
-Usando sua IDE preferida
+E começar a enviar prompts.
+As alterações feitas no Lovable serão automaticamente commitadas neste repositório.
 
-Se quiser trabalhar localmente usando sua própria IDE, você pode clonar este repositório e enviar (push) alterações.
-As mudanças enviadas também serão refletidas no Lovable.
+🖥️ 2. Usando sua IDE preferida (localmente)
 
-O único requisito é ter Node.js e npm instalados — instale usando o nvm
+Se quiser trabalhar localmente, você pode clonar o repositório e enviar suas alterações.
+As mudanças enviadas também aparecerão no Lovable.
 
-Siga os passos:
+Você precisa apenas ter Node.js + npm instalados
+(recomendado instalar via nvm → https://github.com/nvm-sh/nvm#installing-and-updating
+)
 
-# Passo 1: Clone o repositório usando a URL do projeto.
+Passo a passo:
+# Passo 1: Clone o repositório usando a URL do projeto
 git clone <YOUR_GIT_URL>
 
-# Passo 2: Vá até o diretório do projeto.
+# Passo 2: Entre na pasta do projeto
 cd <YOUR_PROJECT_NAME>
 
-# Passo 3: Instale as dependências necessárias.
+# Passo 3: Instale as dependências
 npm i
 
-# Passo 4: Inicie o servidor de desenvolvimento com auto-reload e preview instantâneo.
+# Passo 4: Inicie o servidor de desenvolvimento
 npm run dev
 
-Editar um arquivo diretamente no GitHub
+✏️ 3. Editando diretamente no GitHub
 
-Navegue até o(s) arquivo(s) desejado(s)
+Navegue até o arquivo desejado
 
-Clique no botão "Edit" (ícone de lápis) no canto superior direito da visualização do arquivo
+Clique no ícone de lápis (🖉) no canto superior direito
 
-Faça suas alterações e realize o commit
+Faça suas alterações
 
-Usar GitHub Codespaces
+Confirme o commit
 
-Navegue até a página principal do repositório
+🟣 4. Usando GitHub Codespaces
 
-Clique no botão verde "Code"
+Vá até a página principal do repositório
 
-Selecione a aba "Codespaces"
+Clique no botão Code (verde)
 
-Clique em "New codespace" para abrir um ambiente Codespace
+Vá para a aba Codespaces
 
-Edite os arquivos diretamente no Codespace e faça commit/push quando terminar
+Clique em New Codespace
 
-Tecnologias utilizadas neste projeto
+Edite o projeto e faça commit quando terminar
+
+🧱 Tecnologias utilizadas
 
 Este projeto foi construído com:
 
@@ -69,20 +75,19 @@ shadcn-ui
 
 Tailwind CSS
 
-Como posso fazer o deploy deste projeto?
+🚀 Deploy do Projeto
 
-Basta abrir o Lovable
- e clicar em:
+Para publicar:
 
-Share → Publish
+Acesse o Lovable → Share → Publish
 
-Posso conectar um domínio personalizado ao meu projeto Lovable?
+🌐 Domínio personalizado
 
-Sim, você pode!
+Sim, você pode usar seu próprio domínio!
 
-Para conectar um domínio, navegue até:
+Acesse:
 
-Project > Settings > Domains → Connect Domain
+Project → Settings → Domains → Connect Domain
 
-Saiba mais aqui:
-Documentação: Configurando um domínio personalizado
+Mais detalhes em:
+https://docs.lovable.dev/features/custom-domain#custom-domain
