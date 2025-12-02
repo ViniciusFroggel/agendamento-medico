@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+Bem-vindo ao seu projeto Lovable
+Informações do projeto
 
-## Project info
+URL: https://lovable.dev/projects/bd6cde33-c510-4bb0-acd3-1dbbc8570c8e
 
-**URL**: https://lovable.dev/projects/bd6cde33-c510-4bb0-acd3-1dbbc8570c8e
+Como posso editar este código?
 
-## How can I edit this code?
+Existem várias maneiras de editar sua aplicação.
 
-There are several ways of editing your application.
+Usando o Lovable
 
-**Use Lovable**
+Simplesmente acesse o Projeto no Lovable
+ e comece a enviar comandos.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bd6cde33-c510-4bb0-acd3-1dbbc8570c8e) and start prompting.
+As alterações feitas pelo Lovable serão automaticamente commitadas neste repositório.
 
-Changes made via Lovable will be committed automatically to this repo.
+Usando sua IDE preferida
 
-**Use your preferred IDE**
+Se quiser trabalhar localmente usando sua própria IDE, você pode clonar este repositório e enviar (push) alterações.
+As mudanças enviadas também serão refletidas no Lovable.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+O único requisito é ter Node.js e npm instalados — instale usando o nvm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Siga os passos:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Passo 1: Clone o repositório usando a URL do projeto.
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Passo 2: Vá até o diretório do projeto.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Passo 3: Instale as dependências necessárias.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Passo 4: Inicie o servidor de desenvolvimento com auto-reload e preview instantâneo.
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+Editar um arquivo diretamente no GitHub
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Navegue até o(s) arquivo(s) desejado(s)
 
-**Use GitHub Codespaces**
+Clique no botão "Edit" (ícone de lápis) no canto superior direito da visualização do arquivo
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Faça suas alterações e realize o commit
 
-## What technologies are used for this project?
+Usar GitHub Codespaces
 
-This project is built with:
+Navegue até a página principal do repositório
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Clique no botão verde "Code"
 
-## How can I deploy this project?
+Selecione a aba "Codespaces"
 
-Simply open [Lovable](https://lovable.dev/projects/bd6cde33-c510-4bb0-acd3-1dbbc8570c8e) and click on Share -> Publish.
+Clique em "New codespace" para abrir um ambiente Codespace
 
-## Can I connect a custom domain to my Lovable project?
+Edite os arquivos diretamente no Codespace e faça commit/push quando terminar
 
-Yes, you can!
+Tecnologias utilizadas neste projeto
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Este projeto foi construído com:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Vite
+
+TypeScript
+
+React
+
+shadcn-ui
+
+Tailwind CSS
+
+Como posso fazer o deploy deste projeto?
+
+Basta abrir o Lovable
+ e clicar em:
+
+Share → Publish
+
+Posso conectar um domínio personalizado ao meu projeto Lovable?
+
+Sim, você pode!
+
+Para conectar um domínio, navegue até:
+
+Project > Settings > Domains → Connect Domain
+
+Saiba mais aqui:
+Documentação: Configurando um domínio personalizado
