@@ -1,12 +1,23 @@
-import { Calendar, Clock, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Calendar, Clock, Menu, X, LogOut, User } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useAuth } from '@/hooks/useAuth';
+import { toast } from '@/hooks/use-toast';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, signOut, loading } = useAuth();
 
   const navLinks = [
     { to: '/', label: 'Início' },
@@ -14,6 +25,15 @@ const Header = () => {
     { to: '/agendamentos', label: 'Meus Agendamentos' },
     { to: '/dashboard', label: 'Dashboard' },
   ];
+
+  const handleSignOut = async () => {
+    await signOut();
+    toast({
+      title: "Logout realizado",
+      description: "Você foi desconectado com sucesso.",
+    });
+    navigate('/');
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
@@ -44,12 +64,47 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" size="sm" asChild>
-            <Link to="/agendar">
-              <Clock className="h-4 w-4 mr-2" />
-              Agendar Agora
-            </Link>
-          </Button>
+          {!loading && (
+            <>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2">
+                      <User className="h-4 w-4" />
+                      <span className="max-w-32 truncate">
+                        {user.user_metadata?.name || user.email?.split('@')[0]}
+                      </span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-48">
+                    <DropdownMenuItem asChild>
+                      <Link to="/agendamentos" className="cursor-pointer">
+                        <Calendar className="h-4 w-4 mr-2" />
+                        Meus Agendamentos
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer text-destructive">
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sair
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <>
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link to="/auth">Entrar</Link>
+                  </Button>
+                  <Button size="sm" asChild>
+                    <Link to="/auth">
+                      <Clock className="h-4 w-4 mr-2" />
+                      Agendar
+                    </Link>
+                  </Button>
+                </>
+              )}
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -82,12 +137,30 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Button className="mt-2" asChild>
-              <Link to="/agendar" onClick={() => setMobileMenuOpen(false)}>
-                <Clock className="h-4 w-4 mr-2" />
-                Agendar Agora
-              </Link>
-            </Button>
+            
+            {!loading && (
+              <>
+                {user ? (
+                  <Button 
+                    variant="outline" 
+                    className="mt-2 text-destructive"
+                    onClick={() => {
+                      handleSignOut();
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sair
+                  </Button>
+                ) : (
+                  <Button className="mt-2" asChild>
+                    <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                      Entrar / Cadastrar
+                    </Link>
+                  </Button>
+                )}
+              </>
+            )}
           </nav>
         </div>
       )}
